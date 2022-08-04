@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="CopyMod">
+    <output-path>$USER_HOME$/AppData/Roaming/.minecraft/mods</output-path>
+    <root id="root">
+      <element id="dir-copy" path="$PROJECT_DIR$/build/libs" />
+    </root>
+  </artifact>
+</component>

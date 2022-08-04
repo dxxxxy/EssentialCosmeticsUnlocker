@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "studio.dreamys.ecu.mixin",
+  "refmap": "mixins.ecu.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "other.essential.cosmetics.MixinCosmeticsManager"
+  ]
+}
