@@ -1,0 +1,11 @@
+{
+    "schemaVersion": 1,
+    "id": "ecu",
+    "version": "1.0.0",
+    "name": "EssentialCosmeticsUnlocker",
+    "description": "Client-side only patch that allows you to unlock ALL the cosmetics in the Essential mod.",
+    "authors": ["dxxxxy"],
+    "license": "GPL-3.0",
+    "environment": "*",
+    "mixins": ["mixins.ecu.json"]
+}
