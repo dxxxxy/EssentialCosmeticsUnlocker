@@ -15,6 +15,19 @@ Drag the .jar in your mods folder. Forge will still load it as a dependency.
 - Loads equipped cosmetics from config file when you toggle the `Hide/Show My Cosmetics` button.
 - Not a mod, injects and modifies a single class thanks to Mixin.
 
+# Compatibility
+Feel free to contribute to this table with a PR and a convincing screenshot.
+
+| MC Version    | Forge             | Fabric             | Last Checked |
+|---------------|-------------------|--------------------|--------------|
+| 1.8.9         | `✔️ works`️       | `⬛ not applicable` | 25/03/2023   |
+| 1.12.2        | `✔️ works`️       | `⬛ not applicable` | 25/03/2023   |
+| 1.16.5        | `🚧 untested`️    | `✔️ works`         | 25/03/2023   |
+| 1.17.1        | `🚧 untested`️    | `🚧 untested`      |              |
+| 1.18 - 1.18.2 | `🚧 untested`️    | `🚧 untested`      |              |
+| 1.19 - 1.19.3 | `🚧 untested`️    | `🚧 untested`      |              |
+| 1.19.4        | `❌ doesn't work`️ | `✔️ works`         | 25/03/2023   |
+
 ## Disclaimer
 This is for educational purposes only. I am not responsible for any damage caused by this tool.
 
