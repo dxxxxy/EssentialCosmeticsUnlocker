@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
     "id": "ecu",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "name": "EssentialCosmeticsUnlocker",
     "description": "Client-side only patch that allows you to unlock ALL the cosmetics in the Essential mod.",
     "authors": ["dxxxxy"],
