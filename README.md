@@ -1,5 +1,5 @@
 # EssentialCosmeticsUnlocker
-**Client-side only** patch that allows you to unlock ALL the cosmetics (+ emojis) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.19.4).
+**Client-side only** patch that allows you to unlock ALL the cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.19.4).
 
 ![](https://img.shields.io/badge/COMPATIBILITY-∞-0?style=for-the-badge)
 ![](https://img.shields.io/github/downloads/DxxxxY/EssentialCosmeticsUnlocker/total?style=for-the-badge)
@@ -9,7 +9,7 @@ Grab the .jar you need from the [Releases](https://github.com/DxxxxY/EssentialCo
 
 ## Features
 - Efficient, single class and light-weight thanks to mixin.
-- Unlocks ALL cosmetics and emojis (including developer). 
+- Unlocks ALL cosmetics and emotes (including developer). 
 - Universally compatible with any version (view [Compatibility](#compatibility) table).
 - Saves equipped cosmetics to config file located in your `LocalAppData`.
 - Loads equipped cosmetics from config file when you toggle the `Hide/Show My Cosmetics` button.
