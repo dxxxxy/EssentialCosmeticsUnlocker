@@ -19,13 +19,14 @@ Feel free to contribute to this table with a PR and a convincing screenshot.
 
 | Essential MC Version | Forge          | Fabric*            | Last Checked |
 |----------------------|----------------|--------------------|--------------|
-| 1.8.9                | `✔️ works^`️   | `⬛ not applicable` | 25/03/2023   |
+| 1.8.9                | `✔️ works^`️   | `⬛ not applicable` | 19/04/2023   |
 | 1.12.2               | `✔️ works^`️   | `⬛ not applicable` | 25/03/2023   |
 | 1.16.5               | `✔️ works`     | `✔️ works`         | 25/03/2023   |
 | 1.17.1               | `🚧 untested`️ | `🚧 untested`      |              |
 | 1.18 - 1.18.2        | `🚧 untested`️ | `🚧 untested`      |              |
 | 1.19 - 1.19.3        | `🚧 untested`️ | `🚧 untested`      |              |
-| 1.19.4               | `✔️ works`     | `✔️ works`         | 25/03/2023   |
+| 1.19.4               | `✔️ works`     | `✔️ works`         | 19/04/2023   |
+Last Essential version checked: **v1.2.0.14**
 
 ### Notes
 \* Fabric loads mods differently and requires you to place the hidden essential mod in your mods folder. The one that you usually place in your mods folder is the installer/updater. Instead, the one that you need to place in your mods folder is the big one (40+ mb) which is located in `.minecraft\essential\`.

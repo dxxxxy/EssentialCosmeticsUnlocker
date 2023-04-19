@@ -18,7 +18,7 @@ plugins {
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.0"
+version = "1.2.0"
 group = "dreamys.studio.ecu" //http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ecu" //name of the output jar
 
