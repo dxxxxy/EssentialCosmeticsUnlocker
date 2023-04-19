@@ -45,6 +45,8 @@ repositories {
 }
 
 dependencies {
+    compile 'org.jetbrains:annotations:24.0.0'
+
     //shade will bundle your library to the output jar
     //your libraries will be accessible outside of intellij
     //example:

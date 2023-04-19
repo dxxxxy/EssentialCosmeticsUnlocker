@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import gg.essential.gui.notification.Notifications;
 import gg.essential.mod.cosmetics.CosmeticSlot;
 import gg.essential.network.connectionmanager.ConnectionManager;
+import gg.essential.network.connectionmanager.cosmetics.CosmeticsData;
 import gg.essential.network.connectionmanager.cosmetics.CosmeticsManager;
 import gg.essential.network.cosmetics.Cosmetic;
 import gg.essential.util.UUIDUtil;
@@ -25,7 +26,7 @@ public abstract class MixinCosmeticsManager {
     public Map<CosmeticSlot, String> map = new HashMap<>();
 
     @Shadow
-    public abstract @NotNull Map<String, Cosmetic> getCosmetics();
+    public abstract @NotNull CosmeticsData getCosmeticsData();
 
     @Shadow
     public abstract void setEquippedCosmetics(@NotNull UUID playerId, @NotNull Map<CosmeticSlot, String> equippedCosmetics);
@@ -35,11 +36,11 @@ public abstract class MixinCosmeticsManager {
 
     @Overwrite
     public @NotNull Set<String> getUnlockedCosmetics() {
-        return getCosmetics().keySet();
+        return getCosmeticsData().getCosmetics().get().stream().map(Cosmetic::getId).collect(Collectors.toSet());
     }
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    public void CosmeticManager(ConnectionManager connectionManager, CallbackInfo ci) {
+    public void CosmeticManager(ConnectionManager connectionManager, File baseDir, CallbackInfo ci) {
         //load config
         try {
             System.out.println("[EssentialCosmeticsUnlocker] Loading config");
