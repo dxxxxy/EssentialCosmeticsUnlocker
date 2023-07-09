@@ -13,6 +13,7 @@ Grab the .jar you need from the [Releases](https://github.com/DxxxxY/EssentialCo
 - Universally compatible with any version (view [Compatibility](#compatibility) table).
 - Saves equipped cosmetics to config file located in your `LocalAppData`.
 - Loads equipped cosmetics from config file when you toggle the `Hide/Show My Cosmetics` button.
+- Dumps cosmetic data in your `LocalAppData` (texture, geometry) when opening the game. Useful for those looking to replicate the cosmetics in their own projects.
 
 ## Compatibility
 Feel free to contribute to this table with a PR and a convincing screenshot. Only the major versions are tested as it takes time to do it manually.
