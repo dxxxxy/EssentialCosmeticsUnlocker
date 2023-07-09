@@ -1,9 +1,9 @@
 {
     "schemaVersion": 1,
     "id": "ecu",
-    "version": "1.1.0",
+    "version": "1.2.1",
     "name": "EssentialCosmeticsUnlocker",
-    "description": "Client-side only patch that allows you to unlock ALL the cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.19.4).",
+    "description": "Client-side only patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.20).",
     "authors": ["dxxxxy"],
     "license": "GPL-3.0",
     "environment": "*",
