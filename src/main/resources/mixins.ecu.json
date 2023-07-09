@@ -4,6 +4,7 @@
   "refmap": "mixins.ecu.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "other.essential.cosmetics.MixinCosmeticsManager"
+    "other.essential.cosmetics.MixinCosmeticsManager",
+    "other.essential.cosmetics.MixinServerCosmeticsPopulatePacketHandler"
   ]
 }
