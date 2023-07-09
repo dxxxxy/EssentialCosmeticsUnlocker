@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Minecraft Client" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="GradleStart" />
+    <module name="EssentialCosmeticsUnlock.main" />
+    <option name="VM_PARAMETERS" value="-Dfml.coreMods.load=&quot;studio.dreamys.ecu.mixin.MixinLoader&quot;" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Run" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
