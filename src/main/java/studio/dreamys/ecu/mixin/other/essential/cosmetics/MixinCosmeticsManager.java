@@ -47,8 +47,12 @@ public abstract class MixinCosmeticsManager {
         try {
             System.out.println("[EssentialCosmeticsUnlocker] Loading config");
             Scanner sc = new Scanner(new File(System.getenv("LOCALAPPDATA"), "ecu.txt"));
-            String line = sc.nextLine();
-            map = Arrays.stream(line.replaceAll("[{}]", " ").split(",")).map(s -> s.split("=", 2)).collect(Collectors.toMap(s -> CosmeticSlot.valueOf(s[0].trim()), s -> s[1].trim()));
+
+            while (sc.hasNextLine()) {
+                String[] line = sc.nextLine().split("=");
+                map.put(CosmeticSlot.Companion.of(line[0]), line[1]);
+            }
+
             if (map.isEmpty()) return;
             System.out.println("[EssentialCosmeticsUnlocker] Config loaded");
         } catch (Exception e) {
@@ -79,7 +83,11 @@ public abstract class MixinCosmeticsManager {
         try {
             System.out.println("[EssentialCosmeticsUnlocker] Saving config");
             PrintWriter pw = new PrintWriter(new File(System.getenv("LOCALAPPDATA"), "ecu.txt"));
-            pw.println(map);
+
+            for (Map.Entry<CosmeticSlot, String> entry : map.entrySet()) {
+                pw.println(entry.getKey().getId() + "=" + entry.getValue());
+            }
+
             pw.close();
             System.out.println("[EssentialCosmeticsUnlocker] Config saved");
         } catch (Exception e) {
