@@ -1,6 +1,8 @@
 package studio.dreamys.ecu.mixin.other.essential.cosmetics;
 
 import com.google.common.collect.ImmutableMap;
+import gg.essential.gui.elementa.state.v2.State;
+import gg.essential.gui.elementa.state.v2.StateKt;
 import gg.essential.gui.notification.Notifications;
 import gg.essential.mod.cosmetics.CosmeticSlot;
 import gg.essential.network.connectionmanager.ConnectionManager;
@@ -35,8 +37,8 @@ public abstract class MixinCosmeticsManager {
     private boolean ownCosmeticsVisible;
 
     @Overwrite
-    public @NotNull Set<String> getUnlockedCosmetics() {
-        return getCosmeticsData().getCosmetics().get().stream().map(Cosmetic::getId).collect(Collectors.toSet());
+    public @NotNull State<Set<String>> getUnlockedCosmetics() {
+        return StateKt.stateOf(getCosmeticsData().getCosmetics().get().stream().map(Cosmetic::getId).collect(Collectors.toSet()));
     }
 
     @Inject(method = "<init>", at = @At("TAIL"))
