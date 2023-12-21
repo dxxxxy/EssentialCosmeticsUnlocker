@@ -1,6 +1,8 @@
 package studio.dreamys.ecu.mixin.other.essential.cosmetics;
 
 import com.google.common.collect.ImmutableMap;
+import gg.essential.gui.elementa.state.v2.State;
+import gg.essential.gui.elementa.state.v2.StateKt;
 import gg.essential.gui.notification.Notifications;
 import gg.essential.mod.cosmetics.CosmeticSlot;
 import gg.essential.network.connectionmanager.ConnectionManager;
@@ -35,8 +37,8 @@ public abstract class MixinCosmeticsManager {
     private boolean ownCosmeticsVisible;
 
     @Overwrite
-    public @NotNull Set<String> getUnlockedCosmetics() {
-        return getCosmeticsData().getCosmetics().get().stream().map(Cosmetic::getId).collect(Collectors.toSet());
+    public @NotNull State<Set<String>> getUnlockedCosmetics() {
+        return StateKt.stateOf(getCosmeticsData().getCosmetics().get().stream().map(Cosmetic::getId).collect(Collectors.toSet()));
     }
 
     @Inject(method = "<init>", at = @At("TAIL"))
@@ -45,14 +47,23 @@ public abstract class MixinCosmeticsManager {
         try {
             System.out.println("[EssentialCosmeticsUnlocker] Loading config");
             Scanner sc = new Scanner(new File(System.getenv("LOCALAPPDATA"), "ecu.txt"));
-            String line = sc.nextLine();
-            map = Arrays.stream(line.replaceAll("[{}]", " ").split(",")).map(s -> s.split("=", 2)).collect(Collectors.toMap(s -> CosmeticSlot.valueOf(s[0].trim()), s -> s[1].trim()));
+
+            while (sc.hasNextLine()) {
+                String[] line = sc.nextLine().split("=");
+                map.put(CosmeticSlot.Companion.of(line[0]), line[1]);
+            }
+
             if (map.isEmpty()) return;
             System.out.println("[EssentialCosmeticsUnlocker] Config loaded");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("[EssentialCosmeticsUnlocker] Could not load config file");
         }
+    }
+
+    @Inject(method = "resetState", at = @At("TAIL"))
+    public void resetState(CallbackInfo ci) {
+        setEquippedCosmetics(UUIDUtil.getClientUUID(), map);
     }
 
     @Inject(method = "toggleOwnCosmeticVisibility", at = @At("HEAD"))
@@ -77,7 +88,11 @@ public abstract class MixinCosmeticsManager {
         try {
             System.out.println("[EssentialCosmeticsUnlocker] Saving config");
             PrintWriter pw = new PrintWriter(new File(System.getenv("LOCALAPPDATA"), "ecu.txt"));
-            pw.println(map);
+
+            for (Map.Entry<CosmeticSlot, String> entry : map.entrySet()) {
+                pw.println(entry.getKey().getId() + "=" + entry.getValue());
+            }
+
             pw.close();
             System.out.println("[EssentialCosmeticsUnlocker] Config saved");
         } catch (Exception e) {
