@@ -61,6 +61,11 @@ public abstract class MixinCosmeticsManager {
         }
     }
 
+    @Inject(method = "resetState", at = @At("TAIL"))
+    public void resetState(CallbackInfo ci) {
+        setEquippedCosmetics(UUIDUtil.getClientUUID(), map);
+    }
+
     @Inject(method = "toggleOwnCosmeticVisibility", at = @At("HEAD"))
     public void toggleOwnCosmeticVisibility(boolean notification, CallbackInfo ci) {
         if (ownCosmeticsVisible) return;
