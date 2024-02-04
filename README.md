@@ -18,7 +18,7 @@ Grab the .jar you need from the [Releases](https://github.com/DxxxxY/EssentialCo
 ## Compatibility
 Feel free to contribute to this table with a PR and a convincing screenshot. Only the major versions are tested as it takes time to do it manually.
 
-| MC Major Version | Forge\*        | Fabric            | Last Checked (dd/mm/yyyy) |
+| MC Major Version | Forge\*        | Fabric^            | Last Checked (dd/mm/yyyy) |
 |------------------|--------------|--------------------|---------------------------|
 | 1.8              | `✔️ works`^  | `⬛ not applicable` | 09/07/2023                |
 | 1.12             | `✔️ works`^️ | `⬛ not applicable` | 12/06/2023                |
@@ -33,6 +33,7 @@ Last Essential version checked: **v1.2.1.6**
 
 ### Notes
 * Use the legacy release `-legacy.jar` which has no mod class, but has shaded mixin. This is necessary because functionality changes overtime.
+^ The version of essential from [essential.gg](https://essential.gg/) does not work. Please use the [Modrinth](https://modrinth.com/mod/essential/versions?l=fabric) version instead.
  
 ## Disclaimer
 This is for educational purposes only. I am not responsible for any damage caused by this tool.
