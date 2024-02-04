@@ -29,7 +29,7 @@ Feel free to contribute to this table with a PR and a convincing screenshot. Onl
 | 1.19             | `✔️ works`️  | `✔️ works`         | 12/06/2023                |
 | 1.20             | `✔️ works`   | `✔️ works`         | 03/02/2024                |
 
-Last Essential version checked: **v1.2.1.6**
+Last Essential version checked: **v1.3.0.3**
 
 ### Notes
 * Use the legacy release `-legacy.jar` which has no mod class, but has shaded mixin. This is necessary because functionality changes overtime.
