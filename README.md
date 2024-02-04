@@ -20,14 +20,14 @@ Feel free to contribute to this table with a PR and a convincing screenshot. Onl
 
 | MC Major Version | Forge\*        | Fabric^            | Last Checked (dd/mm/yyyy) |
 |------------------|--------------|--------------------|---------------------------|
-| 1.8              | `✔️ works`^  | `⬛ not applicable` | 09/07/2023                |
-| 1.12             | `✔️ works`^️ | `⬛ not applicable` | 12/06/2023                |
+| 1.8              | `✔️ works`\*  | `⬛ not applicable` | 09/07/2023                |
+| 1.12             | `✔️ works`^\* | `⬛ not applicable` | 12/06/2023                |
 |                  |              |                    |                           |
-| 1.16             | `✔️ works`   | `✔️ works`         | 12/06/2023                |
-| 1.17             | `✔️ works`️  | `✔️ works`         | 12/06/2023                |
-| 1.18             | `✔️ works`️  | `✔️ works`         | 03/02/2024                |
-| 1.19             | `✔️ works`️  | `✔️ works`         | 12/06/2023                |
-| 1.20             | `✔️ works`   | `✔️ works`         | 03/02/2024                |
+| 1.16             | `✔️ works`   | `✔️ works`^         | 12/06/2023                |
+| 1.17             | `✔️ works`️  | `✔️ works`^         | 12/06/2023                |
+| 1.18             | `✔️ works`️  | `✔️ works`^         | 03/02/2024                |
+| 1.19             | `✔️ works`️  | `✔️ works`^         | 12/06/2023                |
+| 1.20             | `✔️ works`   | `✔️ works`^         | 03/02/2024                |
 
 Last Essential version checked: **v1.3.0.3**
 
