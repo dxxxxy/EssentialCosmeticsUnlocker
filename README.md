@@ -1,5 +1,5 @@
 # EssentialCosmeticsUnlocker
-**Client-side only** patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.20).
+**Client-side only** patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.20.4).
 
 ![](https://img.shields.io/badge/COMPATIBILITY-∞-0?style=for-the-badge)
 ![](https://img.shields.io/github/downloads/DxxxxY/EssentialCosmeticsUnlocker/total?style=for-the-badge)
@@ -20,16 +20,18 @@ Feel free to contribute to this table with a PR and a convincing screenshot. Onl
 
 | MC Major Version | Forge        | Fabric*            | Last Checked (dd/mm/yyyy) |
 |------------------|--------------|--------------------|---------------------------|
-| 1.8              | `✔️ works`^  | `⬛ not applicable` | 09/07/2023                |
-| 1.12             | `✔️ works`^️ | `⬛ not applicable` | 12/06/2023                |
+| 1.8              | `✔️ works`^  | `⬛ not applicable` | 27/04/2024                |
+| 1.12             | `✔️ works`^️ | `⬛ not applicable` | 27/04/2024                |
 |                  |              |                    |                           |
-| 1.16             | `✔️ works`   | `✔️ works`         | 12/06/2023                |
-| 1.17             | `✔️ works`️  | `✔️ works`         | 12/06/2023                |
-| 1.18             | `✔️ works`️  | `✔️ works`         | 03/02/2024                |
-| 1.19             | `✔️ works`️  | `✔️ works`         | 12/06/2023                |
-| 1.20             | `✔️ works`   | `✔️ works`         | 03/02/2024                |
+| 1.16             | `✔️ works`   | `✔️ works`         |                           |
+| 1.17             | `✔️ works`️  | `✔️ works`         |                           |
+| 1.18             | `✔️ works`️  | `✔️ works`         |                           |
+| 1.19             | `✔️ works`️  | `✔️ works`         |                           |
+| 1.20             | `✔️ works`   | `✔️ works`         | 27/04/2024                |
 
-Last Essential version checked: **v1.3.0.3**
+Last Essential version checked: **v1.3.1.3**
+
+Tested with downloads from [essential website](https://essential.gg/downloads).
 
 ### Notes
 \* If you downloaded the mod from the [essential website](https://essential.gg/), then the mod that you usually place in your mods folder is the installer/updater. Instead, the one that you need to place in your mods folder is the big one (40+ mb) which is located in `.minecraft\essential\`. If you downloaded essential mod from [Modrinth](https://modrinth.com/mod/essential/versions?l=fabric), you do not need to do anything.
