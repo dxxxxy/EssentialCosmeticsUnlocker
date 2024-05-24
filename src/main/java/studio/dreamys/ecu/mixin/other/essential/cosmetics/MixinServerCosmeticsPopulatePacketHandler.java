@@ -25,11 +25,13 @@ public class MixinServerCosmeticsPopulatePacketHandler {
         try {
             Gson gson = new Gson();
             List<Cosmetic> cosmetics = new ArrayList<>();
-            File file = new File(System.getenv("LOCALAPPDATA"), "ecu.dump.txt");
+            File dumpFile = new File(new File(System.getenv("APPDATA"), "ecu"), "dump.txt");
+            dumpFile.getParentFile().mkdirs();
 
             //start with already existing or new list
-            if (file.exists()) {
-                cosmetics = gson.fromJson(Files.readAllLines(file.toPath()).toString(), new TypeToken<List<Cosmetic>>() {}.getType());
+            if (dumpFile.exists()) {
+                cosmetics = gson.fromJson(Files.readAllLines(dumpFile.toPath()).toString(), new TypeToken<List<Cosmetic>>() {
+                }.getType());
             }
 
             //add incoming cosmetics to the list
@@ -37,7 +39,7 @@ public class MixinServerCosmeticsPopulatePacketHandler {
 
             //dump the list to file
             System.out.println("[EssentialCosmeticsUnlocker] Dumping cosmetics to file...");
-            PrintWriter pw = new PrintWriter(new FileOutputStream(file, true));
+            PrintWriter pw = new PrintWriter(new FileOutputStream(dumpFile, true));
             pw.println(new Gson().toJson(cosmetics));
             pw.close();
             System.out.println("[EssentialCosmeticsUnlocker] Dumped cosmetics to file!");
