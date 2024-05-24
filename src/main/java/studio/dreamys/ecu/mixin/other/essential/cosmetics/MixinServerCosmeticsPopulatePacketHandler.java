@@ -6,7 +6,6 @@ import gg.essential.connectionmanager.common.packet.cosmetic.ServerCosmeticsPopu
 import gg.essential.cosmetics.model.Cosmetic;
 import gg.essential.network.connectionmanager.ConnectionManager;
 import gg.essential.network.connectionmanager.handler.cosmetics.ServerCosmeticsPopulatePacketHandler;
-import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -26,7 +25,7 @@ public class MixinServerCosmeticsPopulatePacketHandler {
         try {
             Gson gson = new Gson();
             List<Cosmetic> cosmetics = new ArrayList<>();
-            File dumpFile = new File(new File(Minecraft.getMinecraft().mcDataDir, "ecu"), "dump.txt");
+            File dumpFile = new File(new File(System.getenv("APPDATA"), "ecu"), "dump.txt");
             dumpFile.getParentFile().mkdirs();
 
             //start with already existing or new list

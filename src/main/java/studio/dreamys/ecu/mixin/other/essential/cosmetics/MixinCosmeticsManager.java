@@ -11,7 +11,6 @@ import gg.essential.network.connectionmanager.cosmetics.CosmeticsManager;
 import gg.essential.network.connectionmanager.cosmetics.EquippedCosmeticsManager;
 import gg.essential.network.cosmetics.Cosmetic;
 import gg.essential.util.UUIDUtil;
-import net.minecraft.client.Minecraft;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -52,7 +51,7 @@ public abstract class MixinCosmeticsManager {
             System.out.println("[EssentialCosmeticsUnlocker] Loading config");
 
             //create if doesnt exist
-            File configFile = new File(new File(Minecraft.getMinecraft().mcDataDir, "ecu"), "ecu.txt");
+            File configFile = new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt");
             configFile.getParentFile().mkdirs();
 
             Scanner sc = new Scanner(configFile);
@@ -96,7 +95,7 @@ public abstract class MixinCosmeticsManager {
         //save config
         try {
             System.out.println("[EssentialCosmeticsUnlocker] Saving config");
-            PrintWriter pw = new PrintWriter(new File(new File(Minecraft.getMinecraft().mcDataDir, "ecu"), "ecu.txt"));
+            PrintWriter pw = new PrintWriter(new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt"));
 
             for (Map.Entry<CosmeticSlot, String> entry : map.entrySet()) {
                 pw.println(entry.getKey().getId() + "=" + entry.getValue());
