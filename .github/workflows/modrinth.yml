@@ -1,0 +1,81 @@
+name: Modrinth Release
+'on':
+  release:
+    types: [ published ]
+jobs:
+  publish:
+    name: Build and Upload JARs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17' # Make sure to set the correct Java version for your project
+          distribution: temurin
+      
+      # This step changes the version in your pom.xml to match the release tag
+      # This change only happens in the workflow and is not committed to your repository.
+      # You could set the version in your repository to something like `0.0.0-SNAPSHOT` and
+      # it will always be overwritten to the correct version here when a release is created.
+      - name: Set maven project ver
+        run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
+      
+      # This step compiles your Maven project to a `.jar`
+      - name: Build and package Maven project
+        run: mvn clean package
+        
+      # An optional step to also upload the `.jar` to the GitHub release assets
+      - name: Upload normal to release
+        uses: JasonEtco/upload-to-release@master
+        with:
+          # Make sure that this matches the file name of your .jar
+          args: target/YourPlugin-${{ github.event.release.tag_name }}.jar application/java-archive
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Upload legacy to release
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: target/YourPlugin-${{ github.event.release.tag_name }}.jar application/java-archive
+        env:
+          GITHUB_TOKEN: '${{secrets.GITHUB_TOKEN }}'
+      
+      # Upload the .jar to Modrinth
+      #- name: Upload normal to Modrinth
+      #  uses: cloudnode-pro/modrinth-publish@1.0.0
+      #  with:
+      #    token: '${{ secrets.MODRINTH_TOKEN }}' # You need to create this secret in your repository settings
+      #    project: cootshk-cicd-test # Replace with your project id/slug
+      #    file: 'target/YourPlugin-${{ github.event.release.tag_name }}.jar' # Make sure that this matches the file name of your .jar
+      #    changelog: '${{ github.event.release.body }}' # Copies the version changelog from the GitHub release notes
+      #    loaders: 'fabric, forge, quilt, neoforge' # A list of your supported loaders
+      #- name: Upload legacy to modrinth
+      #  uses: cloudnode-pro/modrinth-publish@1.0.0
+      #  with:
+      #    token: '${{ secrets.MODRINTH_TOKEN }}'
+      #    project: cootshk-cicd-test
+      #    file: 'target/YourPlugin-${{ github.event.release.tag_name }}.jar'
+      #    changelog: '${{ github.event.release.body }}'
+      #    dependencies: 'essential'
+      #    loaders: 'forge'
+      # Full
+      - name: Modrinth Release
+        uses: dsx137/modrinth-release-action@main
+        env:
+          MODRINTH_TOKEN: "${{ secrets.MODRINTH_TOKEN }}"
+        with:
+          name: "Test"
+          project_id: cootshk-cicd-test
+          loaders: forge, fabric
+          game_versions: 1.20.1, 1.20.2
+          version_number: 1.1.0
+          files: |
+            ./build/libs/*-all.jar
+          dependencies: essential:required
+          changelog: "${{ github.event.release.body }}"
+          version_type: release # or beta, alpha
+          featured: false
+          status: 'listed' # or archived, draft, unlisted, scheduled, unknown
+          requested_status: 'listed' # or archived, draft, unlisted
+          delete_files_if_exists: true
