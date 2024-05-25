@@ -3,14 +3,14 @@
 {
 	"name": "Java",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
+	"image": "mcr.microsoft.com/devcontainers/java:1-17-bullseye",
 
 	"features": {
-		"ghcr.io/devcontainers/features/java:1": {},
-		"ghcr.io/devcontainers-contrib/features/gradle-sdkman:2": {},
-		"ghcr.io/devcontainers-contrib/features/gradleprofiler-sdkman:2": {},
-		"ghcr.io/devcontainers-contrib/features/maven-sdkman:2": {},
-		"ghcr.io/devcontainers-contrib/features/mvnd-sdkman:2": {}
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "true",
+			"installGradle": "true"
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
