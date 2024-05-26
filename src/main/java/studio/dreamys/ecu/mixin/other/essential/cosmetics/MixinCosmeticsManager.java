@@ -95,7 +95,20 @@ public abstract class MixinCosmeticsManager {
         //save config
         try {
             System.out.println("[EssentialCosmeticsUnlocker] Saving config");
-            PrintWriter pw = new PrintWriter(new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt"));
+            String os = System.getProperty("os.name").toLowerCase();
+            PrintWriter pw = null;
+            if (os.contains("win")) { // Windows
+                pw = new PrintWriter(new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt"));
+            } else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) { // Linux
+                pw = new PrintWriter(new File(new File(System.getProperty("HOME"), ".local/share/ecu"), "ecu.txt"));
+            } else { // Mac
+                pw = new PrintWriter(new File(new File(System.getProperty("HOME"), ".ecu"), "ecu.txt"));
+            }
+            for (Map.Entry<CosmeticSlot, String> entry : map.entrySet()) {
+                pw.println(entry.getKey().getId() + "=" + entry.getValue());
+            }
+            pw.close();
+            //PrintWriter pw = new PrintWriter(new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt"));
 
             for (Map.Entry<CosmeticSlot, String> entry : map.entrySet()) {
                 pw.println(entry.getKey().getId() + "=" + entry.getValue());
