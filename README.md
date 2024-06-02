@@ -34,7 +34,7 @@ Last Essential version checked: **v1.3.2.4**
 Tested with downloads from [essential website](https://essential.gg/downloads).
 
 ### Notes
-\* If you downloaded the mod from the [essential website](https://essential.gg/), then the mod that you usually place in your mods folder is the installer/updater. Instead, the one that you need to place in your mods folder is the big one (40+ mb) which is located in `.minecraft\essential\`. If you downloaded essential mod from [Modrinth](https://modrinth.com/mod/essential/versions?l=fabric), you do not need to do anything.
+\* The mod you have downloaded from [essential](https://essential.gg/downloads) or [modrinth](https://modrinth.com/mod/essential/versions) is the installer/updater mod. Instead, the one that you need to place in your mods folder is the one which is located in `.minecraft\essential\`. You need to manually run the game with the installer/updater mod once for it to appear in that folder.
 
 ^ Use the legacy release `-legacy.jar` which has no mod class, but has shaded mixin. This is necessary because functionality changes overtime.
  
