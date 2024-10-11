@@ -51,7 +51,22 @@ public abstract class MixinCosmeticsManager {
             System.out.println("[EssentialCosmeticsUnlocker] Loading config");
 
             //create if doesnt exist
-            File configFile = new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt");
+            File configFile;
+            File newConfigFile;
+            String os = System.getProperty("os.name").toLowerCase();
+            if (os.contains("win")) { // Windows
+                newConfigFile = new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt");
+            } else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) { // Linux
+                newConfigFile = new File(new File(System.getProperty("HOME"), ".local/share/ecu"), "ecu.txt");
+            } else { // Mac
+                newConfigFile = new File(new File(System.getProperty("HOME"), ".ecu"), "ecu.txt");
+            }
+            File oldConfigFile = new File(new File(System.getenv("APPDATA"), "ecu"), "ecu.txt");
+            if (newConfigFile.exists()) {
+                configFile = newConfigFile;
+            } else {
+                configFile = oldConfigFile;
+            }
             configFile.getParentFile().mkdirs();
 
             Scanner sc = new Scanner(configFile);
