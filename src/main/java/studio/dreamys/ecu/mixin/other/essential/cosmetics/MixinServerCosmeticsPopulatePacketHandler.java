@@ -25,7 +25,19 @@ public class MixinServerCosmeticsPopulatePacketHandler {
         try {
             Gson gson = new Gson();
             List<Cosmetic> cosmetics = new ArrayList<>();
-            File dumpFile = new File(new File(System.getenv("APPDATA"), "ecu"), "dump.txt");
+//            File dumpFile = new File(new File(System.getenv("APPDATA"), "ecu"), "dump.txt");
+            File dumpFile;
+            String os = System.getProperty("os.name").toLowerCase();
+            if (os.contains("win")) { // Windows
+                System.out.println("[EssentialCosmeticsUnlocker] Platform: Windows.");
+                dumpFile = new File(new File(System.getenv("APPDATA"), "ecu"), "dump.txt");
+            } else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) { // Linux
+                System.out.println("[EssentialCosmeticsUnlocker] Platform: Linux.");
+                dumpFile = new File(new File(System.getProperty("HOME"), ".local/share/ecu"), "dump.txt");
+            } else { // Mac
+                System.out.println("[EssentialCosmeticsUnlocker] Platform: Mac.");
+                dumpFile = new File(new File(System.getProperty("HOME"), ".ecu"), "dump.txt");
+            }
             dumpFile.getParentFile().mkdirs();
 
             //start with already existing or new list
@@ -38,7 +50,7 @@ public class MixinServerCosmeticsPopulatePacketHandler {
             cosmetics.addAll(packet.getCosmetics());
 
             //dump the list to file
-            System.out.println("[EssentialCosmeticsUnlocker] Dumping cosmetics to file...");
+            System.out.println("[EssentialCosmeticsUnlocker] Dumping cosmetics to file" + dumpFile.getPath() + "...");
             PrintWriter pw = new PrintWriter(new FileOutputStream(dumpFile, true));
             pw.println(new Gson().toJson(cosmetics));
             pw.close();
