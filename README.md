@@ -1,5 +1,5 @@
 # EssentialCosmeticsUnlocker
-**Client-side only** patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.20.6).
+**Client-side only** patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.21).
 
 ![](https://img.shields.io/badge/COMPATIBILITY-∞-0?style=for-the-badge)
 ![](https://img.shields.io/github/downloads/DxxxxY/EssentialCosmeticsUnlocker/total?style=for-the-badge)
