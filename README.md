@@ -28,8 +28,9 @@ Feel free to contribute to this table with a PR and a convincing screenshot. Onl
 | 1.18             | `✔️ works`️  | `✔️ works`         |                           |
 | 1.19             | `✔️ works`️  | `✔️ works`         |                           |
 | 1.20             | `✔️ works`   | `✔️ works`         | 24/05/2024                |
+| 1.21             | `✔️ works`   | `✔️ works`         | 10/10/2024                |
 
-Last Essential version checked: **v1.3.2.4**
+Last Essential version checked: **v1.3.4.1**
 
 Tested with downloads from [essential website](https://essential.gg/downloads).
 

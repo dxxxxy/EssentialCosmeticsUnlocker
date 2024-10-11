@@ -3,9 +3,25 @@
     "id": "ecu",
     "version": "1.4.0",
     "name": "EssentialCosmeticsUnlocker",
-    "description": "Client-side only patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.20.6).",
-    "authors": ["dxxxxy"],
+    "description": "Client-side only patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.21.1).",
+    "icon": "assets/dxxxxy.png",
+    "authors": ["dxxxxy", "Cootshk"],
+    "contact": {
+        "homepage": "https://modrinth.com/mod/ecu",
+        "issues": "https://github.com/dxxxxy/EssentialCosmeticsUnlocker",
+        "sources": "https://github.com/dxxxxy/EssentialCosmeticsUnlocker",
+        "discord": "https://discord.gg/zXFKGhRKZQ"
+    },
     "license": "GPL-3.0",
-    "environment": "*",
-    "mixins": ["mixins.ecu.json"]
+    "environment": "client",
+    "mixins": ["mixins.ecu.json"],
+    "custom": {
+        "modmenu" : {
+            "links" : {
+                "modmenu.discord": "https://discord.gg/zXFKGhRKZQ",
+                "modmenu.modrinth": "https://modrinth.com/mod/ecu",
+                "modmenu.github_releases": "https://github.com/dxxxxy/EssentialCosmeticsUnlocker/releases"
+            }
+        }
+    }
 }
