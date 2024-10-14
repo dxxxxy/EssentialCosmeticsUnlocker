@@ -17,6 +17,10 @@
     "mixins": ["mixins.ecu.json"],
     "custom": {
         "modmenu" : {
+            "badges": ["client"],
+            "parent": {
+                "id": "essential"
+            },
             "links" : {
                 "modmenu.discord": "https://discord.gg/zXFKGhRKZQ",
                 "modmenu.modrinth": "https://modrinth.com/mod/ecu",
