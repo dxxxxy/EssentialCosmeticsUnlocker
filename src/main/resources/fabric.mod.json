@@ -1,7 +1,8 @@
 {
     "schemaVersion": 1,
-    "id": "ecu",
-    "version": "1.4.0",
+    "id": "prometheus-essential",
+    "provides": ["prometheus", "ecu"],
+    "version": "1.4.1",
     "name": "EssentialCosmeticsUnlocker",
     "description": "Client-side only patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.21.1).",
     "icon": "assets/dxxxxy.png",
@@ -12,14 +13,21 @@
         "sources": "https://github.com/dxxxxy/EssentialCosmeticsUnlocker",
         "discord": "https://discord.gg/zXFKGhRKZQ"
     },
+    "depends": {
+        "fabricloader": "*",
+        "minecraft": ">=1.16.5",
+        "essential": "*"
+    },
     "license": "GPL-3.0",
     "environment": "client",
     "mixins": ["mixins.ecu.json"],
     "custom": {
         "modmenu" : {
+            "parent": {
+                "id": "essential"
+            },
             "links" : {
                 "modmenu.discord": "https://discord.gg/zXFKGhRKZQ",
-                "modmenu.modrinth": "https://modrinth.com/mod/ecu",
                 "modmenu.github_releases": "https://github.com/dxxxxy/EssentialCosmeticsUnlocker/releases"
             }
         }
