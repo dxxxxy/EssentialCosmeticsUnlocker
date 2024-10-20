@@ -18,6 +18,11 @@
         "minecraft": ">=1.16.5",
         "essential": "*"
     },
+    "breaks": {
+        "essential-container": "*",
+        "capes": "*",
+        "viafabricplus": "*"
+    },
     "license": "GPL-3.0",
     "environment": "client",
     "mixins": ["mixins.ecu.json"],
