@@ -1,8 +1,9 @@
 # EssentialCosmeticsUnlocker
 **Client-side only** patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.21).
 
-![](https://img.shields.io/badge/COMPATIBILITY-∞-0?style=for-the-badge)
-![](https://img.shields.io/github/downloads/DxxxxY/EssentialCosmeticsUnlocker/total?style=for-the-badge)
+![Compatibility: Infinite](https://img.shields.io/badge/COMPATIBILITY-∞-0?style=for-the-badge)
+[![Download Count](https://img.shields.io/github/downloads/DxxxxY/EssentialCosmeticsUnlocker/total?style=for-the-badge)](https://github.com/dxxxxy/EssentialCosmeticsUnlocker/releases/)
+[![Discord](https://img.shields.io/discord/1197794960985043034?style=for-the-badge&label=Discord&color=rgb(88%2C%20101%2C%20242)%20)](https://discord.gg/BFDWmPfmXg)
 
 ## How to use
 Grab the .jar you need from the [Releases](https://github.com/DxxxxY/EssentialCosmeticsUnlocker/releases) and place it in your `.minecraft\mods\` folder. Take the time to go over the [Compatibility](#compatibility) table and its [Notes](#notes).
@@ -18,19 +19,20 @@ Grab the .jar you need from the [Releases](https://github.com/DxxxxY/EssentialCo
 ## Compatibility
 Feel free to contribute to this table with a PR and a convincing screenshot. Only the major versions are tested as it takes time to do it manually.
 
-| MC Major Version | Forge        | Fabric*            | Last Checked (dd/mm/yyyy) |
-|------------------|--------------|--------------------|---------------------------|
-| 1.8              | `✔️ works`^  | `⬛ not applicable` | 24/05/2024                |
-| 1.12             | `✔️ works`^️ | `⬛ not applicable` |                           |
-|                  |              |                    |                           |
-| 1.16             | `✔️ works`   | `✔️ works`         |                           |
-| 1.17             | `✔️ works`️  | `✔️ works`         |                           |
-| 1.18             | `✔️ works`️  | `✔️ works`         |                           |
-| 1.19             | `✔️ works`️  | `✔️ works`         |                           |
-| 1.20             | `✔️ works`   | `✔️ works`         | 24/05/2024                |
-| 1.21             | `✔️ works`   | `✔️ works`         | 10/10/2024                |
+| MC Major Version | Forge       | Fabric*            | Last Checked (dd/mm/yyyy) |
+|------------------|-------------|--------------------|---------------------------|
+| 1.8              | `❌ broken`^ | `⬛ not applicable` | 24/05/2024                |
+| 1.12             | `❌ broken`^️ | `⬛ not applicable` |                           |
+| 1.16             | `❌ broken`  | `❌ broken`         |                           |
+| 1.17             | `❌ broken`️  | `❌ broken`         | 19/11/2024                |
+| 1.18             | `❌ broken`️  | `❌ broken`         |                           |
+| 1.19             | `❌ broken`️  | `❌ broken`         |                           |
+| 1.20             | `❌ broken`  | `❌ broken`         | 19/11/2024                |
+| 1.21             | `❌ broken`  | `❌ broken`         | 19/11/2024                |
 
-Last Essential version checked: **v1.3.4.1**
+Last Essential version checked: **`v1.3.5.3`**
+
+### We are aware that ecu doesn't work with the current version of essential. Either downgrade essential to **`v1.3.5.1`** or join the [discord](https://discord.gg/BFDWmPfmXg) for support.
 
 Tested with downloads from [essential website](https://essential.gg/downloads).
 
