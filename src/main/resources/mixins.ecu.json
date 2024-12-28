@@ -5,6 +5,12 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "other.essential.cosmetics.MixinCosmeticsManager",
-    "other.essential.cosmetics.MixinServerCosmeticsPopulatePacketHandler"
+    "other.essential.cosmetics.MixinEquippedCosmeticsManager",
+    "other.essential.cosmetics.MixinServerCosmeticsPopulatePacketHandler",
+    "other.essential.cosmetics.MixinWardrobe"
+  ],
+  "mixins": [
+    "other.essential.cosmetics.IWardrobeState",
+    "other.essential.cosmetics.MixinOutfitManager"
   ]
 }

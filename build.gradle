@@ -18,7 +18,7 @@ plugins {
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: "org.spongepowered.mixin"
 
-version = "1.4.1"
+version = "0.0.0"
 group = "dreamys.studio.ecu" //http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ecu" //name of the output jar
 
@@ -54,6 +54,8 @@ dependencies {
         exclude module: "commons-io"
         exclude module: "log4j-core"
     }
+
+    compile(files("libs/essential.mock.jar"))
 
     //shade will bundle your library to the output jar
     //your libraries will be accessible outside of intellij
