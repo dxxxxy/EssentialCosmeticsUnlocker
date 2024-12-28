@@ -1,3 +1,8 @@
+# THIS REPOSITORY HAS BEEN DISCONTINUED/ARCHIVED
+# Up-to-date next-gen implementation can be found [here](https://github.com/prometheusreengineering/essential).
+
+<hr>
+
 # EssentialCosmeticsUnlocker
 **Client-side only** patch that allows you to unlock ALL cosmetics (+ emotes) in the Essential mod. Works on every version of Essential MC (1.8.9 - 1.21).
 
